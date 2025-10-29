@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Exam Registration Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Entrance Exam Registration Hub</h1>
+        <p>Unified registration portal for major Indian entrance exams.</p>
+    </header>
+
+    <div class="exam-selector-container">
+        <label for="examSelect"><h3>Select Your Examination:</h3></label>
+        <select id="examSelect" onchange="showForm()">
+            <option value="">-- Please Select --</option>
+            <option value="jee">JEE (Main)</option>
+            <option value="neet">NEET (UG)</option>
+            <option value="cet">MHT-CET</option>
+        </select>
+    </div>
+
+    <main class="form-container">
+        <form id="jeeForm" class="registration-form" style="display:none;">
+            <h2>📝 JEE (Main) Registration</h2>
+            <hr>
+
+            <fieldset>
+                <legend>Personal Details</legend>
+                <div class="form-group">
+                    <label for="jee_name">Full Name (as per 10th Marksheet):</label>
+                    <input type="text" id="jee_name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="jee_dob">Date of Birth:</label>
+                    <input type="date" id="jee_dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="jee_male" name="gender" value="Male" required><label for="jee_male">Male</label>
+                        <input type="radio" id="jee_female" name="gender" value="Female"><label for="jee_female">Female</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="jee_email">Email ID:</label>
+                    <input type="email" id="jee_email" name="email" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>JEE Specific Details</legend>
+                <div class="form-group">
+                    <label>Paper Opting For:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="jee_p1" name="jee_paper" value="Paper 1 (B.E./B.Tech)" required><label for="jee_p1">Paper 1 (B.E./B.Tech)</label>
+                        <input type="radio" id="jee_p2a" name="jee_paper" value="Paper 2A (B.Arch)"><label for="jee_p2a">Paper 2A (B.Arch)</label>
+                        <input type="radio" id="jee_both" name="jee_paper" value="Both"><label for="jee_both">Both</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="jee_medium">Medium of Question Paper:</label>
+                    <select id="jee_medium" name="medium" required>
+                        <option value="">Select Medium</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="Gujarati">Gujarati</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jee_12th_status">Class 12th Qualifying Exam Code:</label>
+                    <select id="jee_12th_status" name="qual_code" required>
+                        <option value="01">01 - Appearing in 2026</option>
+                        <option value="02">02 - Passed in 2025/Earlier</option>
+                        </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Document Uploads</legend>
+                <div class="form-group">
+                    <label for="jee_photo">Passport Photo (JPG/JPEG):</label>
+                    <input type="file" id="jee_photo" name="photo" accept=".jpg, .jpeg" required>
+                </div>
+                <div class="form-group">
+                    <label for="jee_signature">Signature (JPG/JPEG):</label>
+                    <input type="file" id="jee_signature" name="signature" accept=".jpg, .jpeg" required>
+                </div>
+            </fieldset>
+
+            <button type="submit">Register for JEE (Main)</button>
+        </form>
+
+        <form id="neetForm" class="registration-form" style="display:none;">
+            <h2>🩺 NEET (UG) Registration</h2>
+            <hr>
+
+             <fieldset>
+                <legend>Personal Details</legend>
+                <div class="form-group">
+                    <label for="neet_name">Full Name (as per 10th Marksheet):</label>
+                    <input type="text" id="neet_name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="neet_dob">Date of Birth:</label>
+                    <input type="date" id="neet_dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="neet_male" name="gender" value="Male" required><label for="neet_male">Male</label>
+                        <input type="radio" id="neet_female" name="gender" value="Female"><label for="neet_female">Female</label>
+                        <input type="radio" id="neet_third" name="gender" value="Third Gender"><label for="neet_third">Third Gender</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="neet_email">Email ID:</label>
+                    <input type="email" id="neet_email" name="email" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>NEET Specific Details</legend>
+                <div class="form-group">
+                    <label for="neet_birth_state">Place of Birth State:</label>
+                    <input type="text" id="neet_birth_state" name="birth_state" required>
+                </div>
+                <div class="form-group">
+                    <label for="neet_institution_code">Class 12th Institution Code:</label>
+                    <select id="neet_institution_code" name="institution_code" required>
+                        <option value="1">1 - Govt/Govt Aided School</option>
+                        <option value="2">2 - Private Unaided School</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="neet_attempts">Previous NEET Attempts (0 for Fresh):</label>
+                    <input type="number" id="neet_attempts" name="neet_attempts" min="0" value="0" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Document Uploads</legend>
+                <div class="form-group">
+                    <label for="neet_photo">Passport Photo (JPG/JPEG):</label>
+                    <input type="file" id="neet_photo" name="photo" accept=".jpg, .jpeg" required>
+                </div>
+                <div class="form-group">
+                    <label for="neet_postcard">Postcard Photo (4"x6" JPG/JPEG):</label>
+                    <input type="file" id="neet_postcard" name="neet_postcard" accept=".jpg, .jpeg" required>
+                </div>
+                <div class="form-group">
+                    <label for="neet_signature">Signature (JPG/JPEG):</label>
+                    <input type="file" id="neet_signature" name="signature" accept=".jpg, .jpeg" required>
+                </div>
+                <div class="form-group">
+                    <label for="neet_thumb">L/R Hand Fingers & Thumb Impression (JPG/JPEG):</label>
+                    <input type="file" id="neet_thumb" name="neet_thumb" accept=".jpg, .jpeg" required>
+                </div>
+            </fieldset>
+
+            <button type="submit">Register for NEET (UG)</button>
+        </form>
+
+        <form id="cetForm" class="registration-form" style="display:none;">
+            <h2>⚙️ MHT-CET Registration</h2>
+            <hr>
+
+             <fieldset>
+                <legend>Personal Details</legend>
+                <div class="form-group">
+                    <label for="cet_name">Full Name (as per 10th Marksheet):</label>
+                    <input type="text" id="cet_name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cet_dob">Date of Birth:</label>
+                    <input type="date" id="cet_dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="cet_mobile">Mobile Number:</label>
+                    <input type="tel" id="cet_mobile" name="mobile" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>CET Specific Details</legend>
+                <div class="form-group">
+                    <label>Candidate Type:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="cet_mah" name="cet_type" value="Maharashtra" required><label for="cet_mah">Maharashtra State Candidate</label>
+                        <input type="radio" id="cet_ai" name="cet_type" value="All India"><label for="cet_ai">All India Candidate</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Group Opting For:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="cet_pcm" name="cet_group" value="PCM" required><label for="cet_pcm">PCM (Engineering)</label>
+                        <input type="radio" id="cet_pcb" name="cet_group" value="PCB (Pharmacy/Agri.)"><label for="cet_pcb">PCB (Pharmacy/Agri.)</label>
+                        <input type="radio" id="cet_both" name="cet_group" value="Both"><label for="cet_both">Both</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cet_domicile">Domicile State (For Maharashtra Candidates):</label>
+                    <input type="text" id="cet_domicile" name="domicile" placeholder="Enter State Name" required>
+                </div>
+            </fieldset>
+             
+            <fieldset>
+                <legend>Academic & Category</legend>
+                <div class="form-group">
+                    <label for="cet_category">Category:</label>
+                    <select id="cet_category" name="category" required>
+                        <option value="UR">General (UR)</option>
+                        <option value="OBC">OBC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cet_10th_roll">Class 10th Roll No.:</label>
+                    <input type="text" id="cet_10th_roll" name="10th_roll" required>
+                </div>
+            </fieldset>
+
+            <button type="submit">Register for MHT-CET</button>
+        </form>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
